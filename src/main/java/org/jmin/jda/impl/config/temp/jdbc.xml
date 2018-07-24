@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-mapping>
+	<datasource ID="hsql">
+		<property name="jdbc.driver">org.hsqldb.jdbcDriver</property>
+		<property name="jdbc.url">jdbc:hsqldb:hsql://localhost</property>
+		<property name="jdbc.user">sa</property>
+		<property name="jdbc.password"></property>
+	
+		<property name="connection.poolSize">30</property>
+		<property name="connection.maxIdleTime">180000</property>
+		<property name="connection.maxWaitTime">180000</property>
+		<property name="connection.statement.cacheSize">10</property>
+		<property name="connection.statement.batchSize">20</property>
+		<property name="query.resultset.fetchSize">20</property>
+		<property name="cache.open">true</property>
+		<property name="transaction.open">false</property>
+		<property name="transaction.isolation">TRANSACTION_READ_COMMITTED</property>
+		<property name="jdbc.sql.show">false</property>
+	
+		<mapping resource="com/amigo/pojo/User.hbm.xml" />
+		<mapping resource="com/amigo/pojo/Org.hbm.xml" />
+	</datasource>
+	<jdbc-types>
+	 <type code ="23" name="Varchar"/>
+	 <type code ="21" name="Char"/>
+	</jdbc-types>
+	<persisters>
+	  <persister javaType ="int"  jdbcType="varchar"  class="xxx.xxx.xxx"/>
+	  <persister javaType ="int"  jdbcType="varchar"  class="xxx.xxx.xxx"/>
+	</persisters>
+    <converters>
+	  <converter javaType ="int" class="xxx.xxx.xxx"/>
+	  <converter javaType ="int" class="xxx.xxx.xxx"/>
+	</converters>
+</sql-mapping>
+

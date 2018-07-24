@@ -1,0 +1,7 @@
+<cacheModel id="product-cache" imlementation="LRU"> 
+    <flushInterval hours="24"/> 
+    <flushOnExecute statement="insertProduct"/> 
+    <flushOnExecute statement="updateProduct"/> 
+    <flushOnExecute statement="deleteProduct"/> 
+    <property name="size" value="1000" />
+</cacheModel> 

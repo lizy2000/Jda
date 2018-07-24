@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql-mapping>
+	<datasource>
+		<property name="jdbc.driver">oracle.jdbc.driver.OracleDriver</property>
+		<property name="jdbc.url">jdbc:oracle:thin:@192.168.100.220:1521:vantdev</property>
+		<property name="jdbc.user">loan_admin</property>
+		<property name="jdbc.password">lipsadmin</property>
+	    <property name="connection.poolSize">30</property>
+		<property name="connection.maxIdleTime">180000</property>
+		<property name="connection.maxWaitTime">180000</property>
+		<property name="connection.statement.cacheSize">10</property>
+		<property name="connection.statement.batchSize">30</property>
+		<property name="query.resultset.fetchSize">10</property>
+		<property name="transaction.open">false</property>
+		<property name="transaction.isolation">TRANSACTION_READ_COMMITTED</property>
+		
+		<mapping resource="org/jmin/test/jda/procedure/call.xml"/>
+	</datasource>
+</sql-mapping>
+

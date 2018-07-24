@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <statement space ="product">
+ 	 <insert id ="insert" parameterClass="org.jmin.test.jda.orderDemo.Product">
+		<![CDATA[insert into Product(productNo,productName,productDesc,productType,productSize,productColor)
+		values(#productNo#,#productName#,#productDesc#,#productType#,#productSize#,#productColor#)]]>
+	 </insert>
+	 <select id ="selectOne" parameterClass="String" resultClass="org.jmin.test.jda.orderDemo.Product">
+		<![CDATA[select * from Product where productNo=#productNo#]]>
+	 </select>
+	 
+     <select id ="selectList" parameterClass="org.jmin.test.jda.orderDemo.Product" resultClass="org.jmin.test.jda.orderDemo.Product">
+		<![CDATA[select * from Product  
+		<iterate prepend="where" property="colorList" open=""  separator=" " close="" >
+		  and productColor='#{item}'
+		</iterate>
+		]]>
+	 </select>
+ </statement>

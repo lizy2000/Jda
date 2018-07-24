@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statement space ="call">
+
+	<parameterMap id="call1Parameter" class ="org.jmin.test.jda.procedure.CallParam">
+	   <parameter property="a"           javaType="int"/>
+	   <parameter property="b"           javaType="int"/>
+	   <parameter property="c"           javaType="int" mode="out"/>
+	</parameterMap>
+    <parameterMap id="call2Parameter" class ="org.jmin.test.jda.procedure.CallParam">
+      <parameter property="c"           javaType="int" mode="out"/>
+      <parameter property="a"           javaType="int"/>
+	  <parameter property="b"           javaType="int"/>
+	</parameterMap>
+	<parameterMap id="call3Parameter" class ="org.jmin.test.jda.procedure.CallParam">
+      <parameter property="c"           javaType="int" mode="out"/>
+      <parameter property="a"           javaType="int"/>
+	  <parameter property="b"           javaType="int"/>
+	  <parameter property="userList"    javaType="java.util.List" mode="out" jdbcType="ORACLECURSOR" resultMap="cursorMap"/>
+	</parameterMap>
+	<resultMap id="cursorMap"            class ="java.util.Map">
+	 <result property="F1"              javaType="java.lang.String"/>
+	 <result property="F2"              javaType="java.lang.String"/>
+	 <result property="F3"              javaType="java.lang.String" />
+	</resultMap>
+	
+	<procedure id ="call1" parameterMap="call1Parameter">
+		<![CDATA[{call sumInt(?,?,?)}]]>
+	</procedure>
+	
+    <procedure id ="call2" parameterMap="call2Parameter">
+		<![CDATA[{?=call getMax(?,?)}]]>
+	</procedure>
+	
+	<procedure id ="call3" parameterMap="call3Parameter">
+		<![CDATA[{?=call getList(?,?,?)}]]>
+	</procedure>
+</statement>
